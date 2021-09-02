@@ -1,8 +1,7 @@
-/* eslint-disable import/extensions */
-
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable import/extensions */
 
 import { expect } from '@jest/globals';
 import { addNewTaskToList, deleteItem } from '../update-to-do-list';

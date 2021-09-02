@@ -31,6 +31,8 @@
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.1.0",
     "jest-cli": "^27.1.0",
+    "jest-environment-jsdom": "^27.1.0",
+    "jest-environment-jsdom-global": "^3.0.0",
     "push-dir": "^0.4.1",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
@@ -51,7 +53,11 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "globals": {
+        "window": {}
+      }
     }
+
   }
 }
