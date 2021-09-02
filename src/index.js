@@ -4,7 +4,7 @@
 import "./style.css";
 import { default as Task, updateStatus, updateDescription } from "./task.js";
 import handleStorage from "./handle-storage.js";
-import { updateToDoList } from "./update-to-do-list";
+import { addNewTaskToList } from "./update-to-do-list";
 
 let toDoTasks = handleStorage.getToDoList();
 const listContainer = document.getElementById("to-do-list");
@@ -92,7 +92,7 @@ const newTask = document.getElementById("new-task");
 
 function addNewTask() {
   if (newTask.value) {
-    const toDoTasks = updateToDoList();
+    const toDoTasks = addNewTaskToList();
     toDoList(toDoTasks);
   }
 }

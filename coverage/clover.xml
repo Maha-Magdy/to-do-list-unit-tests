@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1630573149456" clover="3.2.0">
-  <project timestamp="1630573149456" name="All files">
+<coverage generated="1630573944322" clover="3.2.0">
+  <project timestamp="1630573944323" name="All files">
     <metrics statements="16" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2" elements="22" coveredelements="12" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
     <file name="task.js" path="C:\My Personal Projects\Microverse\week_19\to-do-list-unit-tests\src\task.js">
       <metrics statements="9" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
