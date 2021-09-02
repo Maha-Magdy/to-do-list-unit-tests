@@ -1,11 +1,13 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable import/no-named-default */
 /* eslint-disable no-use-before-define */
+/* eslint-disable import/extensions */
+
 import './style.css';
 
-import { default as Task, updateDescription, updateStatus } from './task.js';
-
 import { addNewTaskToList, deleteItem } from './update-to-do-list';
+import { updateDescription, updateStatus } from './task.js';
+
 import handleStorage from './handle-storage.js';
 
 let toDoTasks = handleStorage.getToDoList();

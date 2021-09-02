@@ -1,10 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/extensions */
+
 /**
  * @jest-environment jsdom
  */
 
-import { addNewTaskToList, deleteItem } from '../update-to-do-list';
-
 import { expect } from '@jest/globals';
+import { addNewTaskToList, deleteItem } from '../update-to-do-list';
 
 jest.mock('../handle-storage.js');
 
