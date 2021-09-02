@@ -1,8 +1,13 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable import/no-named-default */
 /* eslint-disable no-use-before-define */
+/* eslint-disable import/extensions */
+
 import './style.css';
-import { default as Task, updateStatus, updateDescription } from './task.js';
+
+import { addNewTaskToList, deleteItem } from './update-to-do-list';
+import { updateDescription, updateStatus } from './task.js';
+
 import handleStorage from './handle-storage.js';
 
 let toDoTasks = handleStorage.getToDoList();
@@ -91,11 +96,7 @@ const newTask = document.getElementById('new-task');
 
 function addNewTask() {
   if (newTask.value) {
-    const taskDescription = newTask.value;
-    const task = new Task(taskDescription, false, 0);
-    handleStorage.setTask(task);
-    toDoTasks = handleStorage.getToDoList();
-    newTask.value = '';
+    const toDoTasks = addNewTaskToList();
     toDoList(toDoTasks);
   }
 }
@@ -142,11 +143,7 @@ function updateOrDeleteTask(li, index, task) {
       e.target.offsetParent,
     );
 
-    const allTasks = handleStorage.getToDoList();
-
-    allTasks.splice(index, 1);
-
-    handleStorage.updateToDoList(allTasks);
+    const allTasks = deleteItem(index);
 
     toDoList(allTasks);
   });
