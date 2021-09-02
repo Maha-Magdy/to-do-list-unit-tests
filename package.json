@@ -42,6 +42,7 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "@jest/globals": "^27.1.0",
     "babel-jest": "^27.1.0",
     "gest": "^1.7.0",
     "gh-pages": "^3.2.3",
