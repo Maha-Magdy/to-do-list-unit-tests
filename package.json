@@ -41,8 +41,15 @@
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
+    "babel-jest": "^27.1.0",
     "gest": "^1.7.0",
     "gh-pages": "^3.2.3",
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }
