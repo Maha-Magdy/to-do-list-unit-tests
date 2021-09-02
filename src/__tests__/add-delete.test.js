@@ -49,7 +49,8 @@ describe('My To-Do List\'s deleting functionality', () => {
     toDoTasks = addNewTaskToList();
 
     const task = toDoTasks[0];
-    // const updatedTask = updateStatus(task, true);
+    // eslint-disable-next-line no-unused-vars
+    const updatedTask = updateStatus(task, true);
 
     toDoTasks = clearAllCompleted(toDoTasks);
     expect(toDoTasks).toHaveLength(0);
