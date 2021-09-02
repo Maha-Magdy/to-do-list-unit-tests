@@ -3,9 +3,8 @@
  */
 /* eslint-disable import/extensions */
 
-import { addNewTaskToList, clearAllCompleted, deleteItem } from '../update-to-do-list';
-
 import { expect } from '@jest/globals';
+import { addNewTaskToList, clearAllCompleted, deleteItem } from '../update-to-do-list';
 import { updateStatus } from '../task.js';
 
 jest.mock('../handle-storage.js');
