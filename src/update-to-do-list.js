@@ -5,6 +5,7 @@ import handleStorage from './handle-storage.js';
 export function addNewTaskToList() {
   const newTask = document.getElementById('new-task');
   const taskDescription = newTask.value;
+  if (taskDescription === '') return handleStorage.getToDoList();
   const task = new Task(taskDescription, false, 0);
   handleStorage.setTask(task);
   newTask.value = '';
@@ -20,4 +21,9 @@ export function deleteItem(index) {
   handleStorage.updateToDoList(allTasks);
 
   return allTasks;
+}
+
+export function clearAllCompleted(toDoList) {
+  const unCompletedTasks = toDoList.filter((task) => task.completed === false);
+  return unCompletedTasks;
 }
