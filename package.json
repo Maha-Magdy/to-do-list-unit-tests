@@ -30,6 +30,7 @@
     "hint": "^6.1.4",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.1.0",
+    "jest-cli": "^27.1.0",
     "push-dir": "^0.4.1",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",

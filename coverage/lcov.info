@@ -1,5 +1,5 @@
 TN:
-SF:src\task.js
+SF:src/task.js
 FN:2,(anonymous_0)
 FN:9,updateStatus
 FN:19,updateDescription
@@ -25,7 +25,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:src\update-to-do-list.js
+SF:src/update-to-do-list.js
 FN:4,addNewTaskToList
 FNF:1
 FNH:1
