@@ -5,6 +5,7 @@ import handleStorage from './handle-storage.js';
 export function addNewTaskToList() {
   const newTask = document.getElementById('new-task');
   const taskDescription = newTask.value;
+  if (taskDescription === '') return handleStorage.getToDoList();
   const task = new Task(taskDescription, false, 0);
   handleStorage.setTask(task);
   newTask.value = '';

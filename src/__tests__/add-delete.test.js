@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+
 /**
  * @jest-environment jsdom
  */
@@ -20,8 +22,21 @@ describe('My To-Do List', () => {
     expect(toDoTasks).toHaveLength(1);
   });
 
+  test('should Not add anything into toDoTask', () => {
+    const newTask = document.getElementById('new-task');
+    newTask.value = '';
+    toDoTasks = addNewTaskToList();
+
+    expect(toDoTasks).toHaveLength(1);
+  });
+
   test('should delete the item when passed the index of it', () => {
     toDoTasks = deleteItem(0);
+    expect(toDoTasks).toHaveLength(0);
+  });
+
+  test('should not delete anything if not passed the index of it', () => {
+    toDoTasks = deleteItem();
     expect(toDoTasks).toHaveLength(0);
   });
 });
