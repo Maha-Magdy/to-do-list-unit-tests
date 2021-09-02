@@ -2,8 +2,9 @@
  * @jest-environment jsdom
  */
 
-import { describe, expect } from "@jest/globals";
+import { describe, expect } from '@jest/globals';
 import { updateDescription, updateStatus } from '../task.js';
+
 import { addNewTaskToList } from '../update-to-do-list';
 
 jest.mock('../handle-storage.js');
@@ -13,24 +14,23 @@ document.body.innerHTML = '<input type="text" placeholder="Add to your list..." 
 let toDoTasks = [];
 
 describe('The Task', () => {
-    const newTask = document.getElementById('new-task');
-    newTask.value = 'Wash the dishes';
-    toDoTasks = addNewTaskToList();
-    const task = toDoTasks[0];
+  const newTask = document.getElementById('new-task');
+  newTask.value = 'Wash the dishes';
+  toDoTasks = addNewTaskToList();
+  const task = toDoTasks[0];
 
-    test('Should have the edited description', () => {
-        const updatedTask = updateDescription(task, 'Go for a walk');
-        expect(updatedTask.description).toBe('Go for a walk');
-    });
+  test('Should have the edited description', () => {
+    const updatedTask = updateDescription(task, 'Go for a walk');
+    expect(updatedTask.description).toBe('Go for a walk');
+  });
 
-    test('Should change the completed status to true', () => {
-        const updatedTask = updateStatus(task, true);
-        expect(updatedTask.completed).toBeTruthy();
-    });
+  test('Should change the completed status to true', () => {
+    const updatedTask = updateStatus(task, true);
+    expect(updatedTask.completed).toBeTruthy();
+  });
 
-    test('Should change the completed status to false', () => {
-        const updatedTask = updateStatus(task, false);
-        expect(updatedTask.completed).toBeFalsy();
-    });
-
+  test('Should change the completed status to false', () => {
+    const updatedTask = updateStatus(task, false);
+    expect(updatedTask.completed).toBeFalsy();
+  });
 });

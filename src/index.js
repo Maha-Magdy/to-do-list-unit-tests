@@ -151,10 +151,15 @@ function updateOrDeleteTask(li, index, task) {
   li.appendChild(deleteBtn);
 }
 
+function clearAllCompleted(toDoList) {
+  const unCompletedTasks = toDoList.filter((task) => task.completed === false);
+  return unCompletedTasks;
+}
+
 const clearCompletedTasksBtn = document.getElementById('clear-completed-tasks');
 clearCompletedTasksBtn.addEventListener('click', () => {
   toDoTasks = handleStorage.getToDoList();
-  const unCompletedTasks = toDoTasks.filter((task) => task.completed === false);
+  const unCompletedTasks = clearAllCompleted(toDoTasks);
   handleStorage.updateToDoList(unCompletedTasks);
   toDoList(unCompletedTasks);
 });
