@@ -5,7 +5,7 @@
 
 import './style.css';
 
-import { addNewTaskToList, deleteItem } from './update-to-do-list';
+import { addNewTaskToList, deleteItem, clearAllCompleted } from './update-to-do-list';
 import { updateDescription, updateStatus } from './task.js';
 
 import handleStorage from './handle-storage.js';
@@ -149,11 +149,6 @@ function updateOrDeleteTask(li, index, task) {
   });
 
   li.appendChild(deleteBtn);
-}
-
-function clearAllCompleted(toDoList) {
-  const unCompletedTasks = toDoList.filter((task) => task.completed === false);
-  return unCompletedTasks;
 }
 
 const clearCompletedTasksBtn = document.getElementById('clear-completed-tasks');

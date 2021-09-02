@@ -22,3 +22,8 @@ export function deleteItem(index) {
 
   return allTasks;
 }
+
+export function clearAllCompleted(toDoList) {
+  const unCompletedTasks = toDoList.filter((task) => task.completed === false);
+  return unCompletedTasks;
+}
