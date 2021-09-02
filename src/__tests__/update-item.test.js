@@ -1,6 +1,8 @@
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable import/extensions */
+/* eslint-disable no-unused-vars */
 
 import { describe, expect } from '@jest/globals';
 import { updateDescription, updateStatus } from '../task.js';

@@ -3,8 +3,9 @@
  */
 /* eslint-disable import/extensions */
 
+import { addNewTaskToList, clearAllCompleted, deleteItem } from '../update-to-do-list';
+
 import { expect } from '@jest/globals';
-import { addNewTaskToList, deleteItem, clearAllCompleted } from '../update-to-do-list';
 import { updateStatus } from '../task.js';
 
 jest.mock('../handle-storage.js');
@@ -48,7 +49,7 @@ describe('My To-Do List\'s deleting functionality', () => {
     toDoTasks = addNewTaskToList();
 
     const task = toDoTasks[0];
-    const updatedTask = updateStatus(task, true);
+    // const updatedTask = updateStatus(task, true);
 
     toDoTasks = clearAllCompleted(toDoTasks);
     expect(toDoTasks).toHaveLength(0);
