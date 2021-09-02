@@ -10,3 +10,13 @@ export function addNewTaskToList() {
     const toDoTasks = handleStorage.getToDoList();
     return toDoTasks
   }
+
+export function deleteItem(index) {
+    const allTasks = handleStorage.getToDoList();
+
+    allTasks.splice(index, 1);
+
+    handleStorage.updateToDoList(allTasks);
+
+    return allTasks;
+  }

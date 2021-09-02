@@ -5,7 +5,7 @@ import './style.css';
 
 import { default as Task, updateDescription, updateStatus } from './task.js';
 
-import { addNewTaskToList } from './update-to-do-list';
+import { addNewTaskToList, deleteItem } from './update-to-do-list';
 import handleStorage from './handle-storage.js';
 
 let toDoTasks = handleStorage.getToDoList();
@@ -109,7 +109,7 @@ newTask.addEventListener('keydown', (e) => {
   }
 });
 
-export default function updateOrDeleteTask(li, index, task) {
+function updateOrDeleteTask(li, index, task) {
   li.removeChild(li.lastElementChild);
   li.removeChild(li.lastElementChild);
 
@@ -141,11 +141,7 @@ export default function updateOrDeleteTask(li, index, task) {
       e.target.offsetParent,
     );
 
-    const allTasks = handleStorage.getToDoList();
-
-    allTasks.splice(index, 1);
-
-    handleStorage.updateToDoList(allTasks);
+    const allTasks = deleteItem(index);
 
     toDoList(allTasks);
   });
