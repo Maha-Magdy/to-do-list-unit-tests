@@ -10,6 +10,7 @@ A "To-do list" is a tool that helps to organize your day. It simply lists the th
 - html-webpack-plugin
 - style-loader, css-loader
 - webpack-dev-server
+- Jest
 
 
 ## Live Demo
